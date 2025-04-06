@@ -1,15 +1,19 @@
 package com.example.financetracker
 
 import android.app.Application
-import timber.log.Timber
+import com.example.financetracker.util.Logger // Assuming Logger setup
+import dagger.hilt.android.HiltAndroidApp
+import timber.log.Timber // Using Timber for logging
 
-
+@HiltAndroidApp
 class FinanceTrackerApp : Application() {
     override fun onCreate() {
         super.onCreate()
-        // Initialize Timber for logging in debug builds
-        if (true) {
+        // Initialize Logging - Plant Timber tree in Debug builds only
+        if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
+            Logger.i("Timber logging initialized")
         }
+        // You could initialize other things here if needed
     }
 }
