@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.example.financetracker"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Required SMS permissions -->
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+
+    <application
+        android:name=".FinanceTrackerApp"
+        android:allowBackup="true"
+        android:label="Finance Tracker">
+<!--        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">-->
+
+        <activity android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Broadcast receiver to capture incoming SMS messages -->
+<!--        <receiver android:name=".SmsReceiver" android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+    </application>
+</manifest>
